@@ -1,11 +1,54 @@
-<div style="font-family: sans-serif; padding: 20px;">
-    <h1 style="color: #333;">ยินดีต้อนรับสู่เว็บไซต์ของเรา!</h1>
-    <p>เราคือเว็บไซต์ที่ให้ข้อมูลเกี่ยวกับบริการต่างๆ เพื่อช่วยเหลือคุณให้สะดวกสบายยิ่งขึ้น</p>
-  
-    <h2 style="color: #555; margin-top: 30px;">บริการของเรา</h2>
-    <ul>
-      <li>ออกแบบเว็บไซต์</li>
-      <li>ให้คำปรึกษาธุรกิจออนไลน์</li>
-      <li>ดูแลระบบโซเชียลมีเดีย</li>
-    </ul>
-  
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-language Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .lang { display: none; }
+    .lang.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ส่วนหัว -->
+  <h1 class="lang lang-th">ยินดีต้อนรับสู่เว็บไซต์ของเรา!</h1>
+  <h1 class="lang lang-en">Welcome to our website!</h1>
+
+  <!-- ย่อหน้าแรก -->
+  <p class="lang lang-th">เราคือเว็บไซต์ที่ให้ข้อมูลเกี่ยวกับบริการต่างๆ เพื่อช่วยเหลือคุณให้สะดวกสบายยิ่งขึ้น</p>
+  <p class="lang lang-en">We are a site that provides information about services to make your life easier.</p>
+
+  <!-- หัวข้อบริการ -->
+  <h2 class="lang lang-th">บริการของเรา</h2>
+  <h2 class="lang lang-en">Our Services</h2>
+
+  <!-- รายการบริการ -->
+  <ul>
+    <li class="lang lang-th">ออกแบบเว็บไซต์</li>
+    <li class="lang lang-en">Website Design</li>
+
+    <li class="lang lang-th">ให้คำปรึกษาธุรกิจออนไลน์</li>
+    <li class="lang lang-en">Online Business Consulting</li>
+
+    <li class="lang lang-th">ดูแลระบบโซเชียลมีเดีย</li>
+    <li class="lang lang-en">Social Media Management</li>
+  </ul>
+
+  <!-- JavaScript สำหรับสลับภาษา -->
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('active'));
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') || 'th';
+    switchLang(lang);
+  </script>
+
+</body>
+</html>
