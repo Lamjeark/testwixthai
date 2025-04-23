@@ -39,23 +39,16 @@
   </ul>
 
   <!-- JavaScript สำหรับสลับภาษา -->
-  <script>
-    function switchLang(lang) {
-      // ซ่อนทุก element ที่มีคลาส .lang
-      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
-      // แสดงเฉพาะ element ที่มีคลาส .lang-[lang]
-      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('active'));
-    }
+ <script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+  }
 
-    // ตรวจจับภาษาจาก URL path ของ Wix
-    let lang = 'th'; // ค่าเริ่มต้นคือภาษาไทย
-    if (window.location.pathname.includes('/en')) {
-      lang = 'en';
-    } else if (window.location.pathname.includes('/th')) {
-      lang = 'th';
-    }
-    switchLang(lang);
-  </script>
+  const path = window.location.pathname;
+  const lang = path.includes('/en') ? 'en' : 'th';
+  switchLang(lang);
+</script>
 
 </body>
 </html>
