@@ -26,29 +26,30 @@
   <h2 class="lang lang-th">บริการของเรา</h2>
   <h2 class="lang lang-en">Our Services</h2>
 
-  <!-- รายการบริการ -->
-  <ul>
-    <li class="lang lang-th">ออกแบบเว็บไซต์</li>
-    <li class="lang lang-en">Website Design</li>
+  <!-- รายการบริการ แยกตามภาษา -->
+  <ul class="lang lang-th">
+    <li>ออกแบบเว็บไซต์</li>
+    <li>ให้คำปรึกษาธุรกิจออนไลน์</li>
+    <li>ดูแลระบบโซเชียลมีเดีย</li>
+  </ul>
 
-    <li class="lang lang-th">ให้คำปรึกษาธุรกิจออนไลน์</li>
-    <li class="lang lang-en">Online Business Consulting</li>
-
-    <li class="lang lang-th">ดูแลระบบโซเชียลมีเดีย</li>
-    <li class="lang lang-en">Social Media Management</li>
+  <ul class="lang lang-en">
+    <li>Website Design</li>
+    <li>Online Business Consulting</li>
+    <li>Social Media Management</li>
   </ul>
 
   <!-- JavaScript สำหรับสลับภาษา -->
- <script>
-  function switchLang(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-  }
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+    }
 
-  const path = window.location.pathname;
-  const lang = path.includes('/en') ? 'en' : 'th';
-  switchLang(lang);
-</script>
+    const path = window.location.pathname;
+    const lang = path.includes('/en') ? 'en' : 'th';
+    switchLang(lang);
+  </script>
 
 </body>
 </html>
